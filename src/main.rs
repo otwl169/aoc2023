@@ -72,8 +72,7 @@ fn day1_part2() {
 
         }
 
-        let mut calibration_string: String = numbers.first().unwrap().to_owned().to_string();
-        calibration_string.push_str(numbers.last().unwrap());
+        let calibration_string = format!("{}{}", numbers.first().unwrap(), numbers.last().unwrap());
 
         let calibration_value = calibration_string.parse::<i32>().unwrap();
         sum += calibration_value;
