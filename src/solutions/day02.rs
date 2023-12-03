@@ -35,7 +35,7 @@ pub fn day2_part1() {
         }
         
         if reds <= 12 && greens <= 13 && blues <= 14 {
-            let game_id = parts[0].split(' ').collect::<Vec<&str>>()[1].parse::<i32>().unwrap();
+            let game_id: i32 = parts[0].split(' ').collect::<Vec<_>>()[1].parse().unwrap();
             sum += game_id;
         }
     }
@@ -54,7 +54,6 @@ pub fn day2_part2() {
     let mut sum = 0;
     for line in lines {
         let parts: Vec<&str> = line.split(":").collect(); // parts[0] = "Game x", parts[1] = 3 Blue, ...
-        
         
         let mut blues = 0;
         let mut reds = 0;
