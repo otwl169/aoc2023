@@ -62,7 +62,6 @@ pub fn day3_part2() {
     for i in 0..=lines.len()-1 {
         for (j, c) in lines[i].chars().enumerate() {
             if c == '*' {
-                // println!();
                 // check for numbers around it and add to surrounding numbers vec
                 let mut surrounding_numbers = Vec::new();
 
@@ -77,7 +76,6 @@ pub fn day3_part2() {
                             num_string.push(ch);
                         }
 
-                        // println!("before check");
                         if (ch.is_digit(10) && (k == line_length-1))
                         || (!ch.is_digit(10) && (num_string.len() > 0)) {
                             // end of number
@@ -87,8 +85,6 @@ pub fn day3_part2() {
                             let num_interval_start = k - num_string.len();
                             let ast_interval_end = min(j+1, line_length-1);
                             let num_interval_end = k-1;
-
-                            // println!("number {}\t numrange: {}-{}; astrange: {}-{}", num_string, num_interval_start, num_interval_end, ast_interval_start, ast_interval_end);
 
                             if (num_interval_start <= ast_interval_end)
                             && (num_interval_end >= ast_interval_start) {
@@ -103,7 +99,6 @@ pub fn day3_part2() {
 
                 // check if only two are connected
                 if surrounding_numbers.len() == 2 {
-                    // println!("{:?}", surrounding_numbers);
                     sum += surrounding_numbers[0] * surrounding_numbers[1];
                 }
             }
