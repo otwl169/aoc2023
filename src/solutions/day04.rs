@@ -9,8 +9,8 @@ pub fn day4_part1() {
             line.to_string();
             let (_card, numbers) = line.split_once(":").unwrap();
             let (winning_numbers_str, owned_numbers_str) = numbers.split_once("|").unwrap();
-            let mut winning_numbers_set: HashSet<_>  = HashSet::from_iter(winning_numbers_str.trim().split(" "));
-            let owned_numbers_set: HashSet<_> = HashSet::from_iter(owned_numbers_str.trim().split(" "));
+            let mut winning_numbers_set: HashSet<_>  = winning_numbers_str.trim().split(" ").collect();
+            let owned_numbers_set: HashSet<_> = owned_numbers_str.trim().split(" ").collect();
             winning_numbers_set.remove(&""); // remove empty string
     
             let wins: u32 = winning_numbers_set.intersection(&owned_numbers_set).count().try_into().unwrap();
@@ -32,8 +32,8 @@ pub fn day4_part2() {
             line.to_string();
             let (_card, numbers) = line.split_once(":").unwrap();
             let (winning_numbers_str, owned_numbers_str) = numbers.split_once("|").unwrap();
-            let mut winning_numbers_set: HashSet<_>  = HashSet::from_iter(winning_numbers_str.trim().split(" "));
-            let owned_numbers_set: HashSet<_> = HashSet::from_iter(owned_numbers_str.trim().split(" "));
+            let mut winning_numbers_set: HashSet<_>  = winning_numbers_str.trim().split(" ").collect();
+            let owned_numbers_set: HashSet<_> = owned_numbers_str.trim().split(" ").collect();
             winning_numbers_set.remove(&""); // remove empty string
     
             let wins: u32 = winning_numbers_set.intersection(&owned_numbers_set).count().try_into().unwrap();
