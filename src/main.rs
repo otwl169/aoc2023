@@ -1,5 +1,5 @@
 pub mod solutions;
 
 fn main() {
-    solutions::day03::day3_part2();
+    solutions::day04::day4_part2();
 }
