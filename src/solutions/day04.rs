@@ -2,7 +2,7 @@ use std::fs::read_to_string;
 use std::collections::HashSet;
 
 pub fn day4_part1() {
-    let lines: i32 = read_to_string("input/04.txt")
+    let ans: i32 = read_to_string("input/04.txt")
         .unwrap()
         .lines()
         .fold(0, |mut sum: i32, line| {
@@ -21,7 +21,7 @@ pub fn day4_part1() {
             sum
         });
     
-    println!("{}", lines);
+    println!("{}", ans);
 }
 
 pub fn day4_part2() {
